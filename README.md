@@ -1,8 +1,6 @@
-# VIPER TEMPLATE 🐍
+# Xcode Template for Viper 🐍
 
 ### by Sebastian Boldt
-
-This is an Xcode template that reflects my personal taste for the Viper pattern.
 
 I used a protocol-oriented approach so that mocking is possible for all components.
 
@@ -15,6 +13,10 @@ Use the install script.
 ```sudo swift install.swift```
 
 inspired by: https://github.com/Juanpe/Swift-VIPER-Module
+
+## Structure
+
+![Viper](https://github.com/SebastianBoldt/Viper-Xcode-Template/blob/master/viper.png?raw=true)
 
 ## 🤖 Author
 
