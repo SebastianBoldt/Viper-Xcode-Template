@@ -2,19 +2,24 @@
 
 ### by Sebastian Boldt
 
-This is a Xcode Template tailored for my personal taste of the Viper-Architecture
+This is an Xcode template that reflects my personal taste for the Viper pattern.
 
-It will create a ViewController, Presenter, Interactor, Router & Wireframe for you.
+I used a protocol-oriented approach so that mocking is possible for all components.
 
-It uses a protocol-based approach so the components can be tested and mocked easily.
+Dependencies are also created for Interactor and Presenter to being able counterfeit the dependencies in the test environment.
 
-It also creates a DI-Ready Presenter and Interactor for you.
+## How to use 🛠
 
-## How to use.
+Use the install script.
 
-Use the install script that is shipped inside this repository.
+```sudo swift install.swift```
 
+## 🤖 Author
 
+Sebastian Boldt, self.dealloc@googlemail.com
 
+## 📄 License
+
+Jelly is available under the MIT license. See the LICENSE file for more info.
 
 
