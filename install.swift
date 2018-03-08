@@ -20,7 +20,7 @@ struct Constants {
     
     struct Messages {
         static let successMessage = "✅  Template was installed succesfully 🎉. Enjoy it 🙂"
-        static let successfullReplaceMessage = "✅  The Template already existed. So it has been replaced for you with the new version 🎉. Enjoy it 🙂"
+        static let successfullReplaceMessage = "✅  The Template has been replaced for you with the new version 🎉. Enjoy it 🙂"
         static let errorMessage = "❌  Ooops! Something went wrong 😡"
         static let exitMessage = "Buy Buy 👋"
         static let promptReplace = "That Template already exists. Do you want to replace it? (YES or NO)"
@@ -42,9 +42,9 @@ func moveTemplate(){
     do {
         let fileManager = FileManager.default
         let destinationPath = bash(command: "xcode-select", arguments: ["--print-path"]).appending(Constants.File.destinationRelativePath)
-        
+        printToConsole("Template will be copied to: \(destinationPath)")
         if !fileManager.fileExists(atPath: destinationPath){
-            try fileManager.copyItem(atPath: Constants.File.templateName, toPath: destinationPath)
+            try fileManager.copyItem(atPath: Constants.File.templateName, toPath: "\(destinationPath)/\(Constants.File.templateName)")
             printToConsole(Constants.Messages.successMessage)
             
         } else{
@@ -58,7 +58,7 @@ func moveTemplate(){
             } while(input != Constants.CommandLineValues.yes && input != Constants.CommandLineValues.no)
             
             if input == Constants.CommandLineValues.yes {
-                try _ = fileManager.replaceItemAt(URL(fileURLWithPath: destinationPath), withItemAt: URL(fileURLWithPath: Constants.File.templateName))
+                try _ = fileManager.replaceItemAt(URL(fileURLWithPath: "\(destinationPath)/\(Constants.File.templateName)"), withItemAt: URL(fileURLWithPath: Constants.File.templateName))
                 printToConsole(Constants.Messages.successfullReplaceMessage)
             } else {
                 print(Constants.Messages.exitMessage)
