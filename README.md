@@ -1,4 +1,6 @@
-# Xcode Template for Viper 🐍
+# VIPER Template for Xcode 🐍
+
+![Viper](https://github.com/SebastianBoldt/Viper-Xcode-Template/blob/master/banner.png?raw=true)
 
 ### by Sebastian Boldt
 
