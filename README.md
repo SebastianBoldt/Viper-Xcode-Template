@@ -32,6 +32,6 @@ This Template is available under the MIT license. See the LICENSE file for more 
 
 ## Todo
 
-* FileManager should not remove Template Files from the Template Project Director
+* FileManager should not remove Template Files from the Template Project Directory
 * Better Code Documentation 
 
