@@ -1,4 +1,4 @@
-# VIPER Template for Xcode 🐍
+# VIPER Template for Xcode
 ![Viper](https://github.com/SebastianBoldt/Viper-Xcode-Template/blob/89a2783e891090127c8a06840aab4b0c57829fdc/banner.png?raw=true)
 
 <a href="http://twitter.com/sebastianboldt"><img src="https://img.shields.io/badge/twitter-@sebastianboldt-blue.svg?longCache=true&style=flat-square" alt="twitter handle" /></a>
@@ -16,15 +16,12 @@ Use the install script.
 
 ```sudo swift install.swift```
 
-inspired by: https://github.com/Juanpe/Swift-VIPER-Module
-
 ## Structure
-
 ![Viper](https://github.com/SebastianBoldt/Viper-Xcode-Template/blob/master/viper.png?raw=true)
 
 ## 🤖 Author
 
-Sebastian Boldt, self.dealloc@googlemail.com
+Sebastian Boldt, http://sebastianboldt.com
 
 ## 📄 License
 
