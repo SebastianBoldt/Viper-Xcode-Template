@@ -2,44 +2,76 @@
 //  main.swift
 //  InstallVIPERTemplate
 //
+//  Created by Sebastian Boldt on 08.03.18.
 //
 
 import Foundation
 
-let templateName = "Viper.xctemplate"
-let destinationRelativePath = "/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/Project Templates/iOS/Application"
+struct Constants {
+    
+    struct CommandLineValues {
+        static let yes = "YES"
+        static let no = "NO"
+    }
+    struct File {
+        static let templateName = "Viper.xctemplate"
+        static let destinationRelativePath = "/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/Project Templates/iOS/Application"
+    }
+    
+    struct Messages {
+        static let successMessage = "✅  Template was installed succesfully 🎉. Enjoy it 🙂"
+        static let successfullReplaceMessage = "✅  The Template already existed. So it has been replaced for you with the new version 🎉. Enjoy it 🙂"
+        static let errorMessage = "❌  Ooops! Something went wrong 😡"
+        static let exitMessage = "Buy Buy 👋"
+        static let promptReplace = "That Template already exists. Do you want to replace it? (YES or NO)"
+    }
+    
+    struct Blocks {
+        static let printSeparator = { print("====================================") }
+    }
+}
 
-func printInConsole(_ message:Any){
-    print("====================================")
+
+func printToConsole(_ message:Any){
+    Constants.Blocks.printSeparator()
     print("\(message)")
-    print("====================================")
+    Constants.Blocks.printSeparator()
 }
 
 func moveTemplate(){
-
-    let fileManager = FileManager.default
-    let destinationPath = bash(command: "xcode-select", arguments: ["--print-path"]).appending(destinationRelativePath)
     do {
-        if !fileManager.fileExists(atPath:"\(destinationPath)/\(templateName)"){
+        let fileManager = FileManager.default
+        let destinationPath = bash(command: "xcode-select", arguments: ["--print-path"]).appending(Constants.File.destinationRelativePath)
         
-            try fileManager.copyItem(atPath: templateName, toPath: "\(destinationPath)/\(templateName)")
+        if !fileManager.fileExists(atPath: destinationPath){
+            try fileManager.copyItem(atPath: Constants.File.templateName, toPath: destinationPath)
+            printToConsole(Constants.Messages.successMessage)
             
-            printInConsole("✅  Template installed succesfully 🎉. Enjoy it 🙂")
+        } else{
+            print(Constants.Messages.promptReplace)
+            var input = ""
+            repeat {
+                guard let textFormCommandLine = readLine(strippingNewline: true) else {
+                    continue
+                }
+                input = textFormCommandLine.uppercased()
+            } while(input != Constants.CommandLineValues.yes && input != Constants.CommandLineValues.no)
             
-        }else{
-            
-            try _ = fileManager.replaceItemAt(URL(fileURLWithPath:"\(destinationPath)/\(templateName)"), withItemAt: URL(fileURLWithPath:templateName))
-            
-            printInConsole("✅  Template already exists. So has been replaced succesfully 🎉. Enjoy it 🙂")
+            if input == Constants.CommandLineValues.yes {
+                try _ = fileManager.replaceItemAt(URL(fileURLWithPath: destinationPath), withItemAt: URL(fileURLWithPath: Constants.File.templateName))
+                printToConsole(Constants.Messages.successfullReplaceMessage)
+            } else {
+                print(Constants.Messages.exitMessage)
+            }
         }
     }
+        
     catch let error as NSError {
-        printInConsole("❌  Ooops! Something went wrong 😡 : \(error.localizedFailureReason!)")
+        printToConsole("\(Constants.Messages.errorMessage) : \(error.localizedFailureReason!)")
     }
 }
 
-func shell(launchPath: String, arguments: [String]) -> String
-{
+func shell(launchPath: String, arguments: [String]) -> String {
     let task = Process()
     task.launchPath = launchPath
     task.arguments = arguments
@@ -50,7 +82,7 @@ func shell(launchPath: String, arguments: [String]) -> String
     
     let data = pipe.fileHandleForReading.readDataToEndOfFile()
     let output = String(data: data, encoding: String.Encoding.utf8)!
-    if output.characters.count > 0 {
+    if output.count > 0 {
         //remove newline character.
         let lastIndex = output.index(before: output.endIndex)
         return String(output[output.startIndex ..< lastIndex])
