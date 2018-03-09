@@ -8,7 +8,7 @@
 import Foundation
 
 struct Constants {
-    
+
     struct CommandLineValues {
         static let yes = "YES"
         static let no = "NO"
@@ -17,7 +17,7 @@ struct Constants {
         static let templateName = "Viper.xctemplate"
         static let destinationRelativePath = "/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/Project Templates/iOS/Application"
     }
-    
+
     struct Messages {
         static let successMessage = "✅  Template was installed succesfully 🎉. Enjoy it 🙂"
         static let successfullReplaceMessage = "✅  The Template has been replaced for you with the new version 🎉. Enjoy it 🙂"
@@ -25,7 +25,7 @@ struct Constants {
         static let exitMessage = "Buy Buy 👋"
         static let promptReplace = "That Template already exists. Do you want to replace it? (YES or NO)"
     }
-    
+
     struct Blocks {
         static let printSeparator = { print("====================================") }
     }
@@ -43,10 +43,10 @@ func moveTemplate(){
         let fileManager = FileManager.default
         let destinationPath = bash(command: "xcode-select", arguments: ["--print-path"]).appending(Constants.File.destinationRelativePath)
         printToConsole("Template will be copied to: \(destinationPath)")
-        if !fileManager.fileExists(atPath: destinationPath){
+        if !fileManager.fileExists(atPath: "\(destinationPath)/\(Constants.File.templateName)"){
             try fileManager.copyItem(atPath: Constants.File.templateName, toPath: "\(destinationPath)/\(Constants.File.templateName)")
             printToConsole(Constants.Messages.successMessage)
-            
+
         } else{
             print(Constants.Messages.promptReplace)
             var input = ""
@@ -56,7 +56,7 @@ func moveTemplate(){
                 }
                 input = textFormCommandLine.uppercased()
             } while(input != Constants.CommandLineValues.yes && input != Constants.CommandLineValues.no)
-            
+
             if input == Constants.CommandLineValues.yes {
                 try _ = fileManager.replaceItemAt(URL(fileURLWithPath: "\(destinationPath)/\(Constants.File.templateName)"), withItemAt: URL(fileURLWithPath: Constants.File.templateName))
                 printToConsole(Constants.Messages.successfullReplaceMessage)
@@ -65,7 +65,7 @@ func moveTemplate(){
             }
         }
     }
-        
+
     catch let error as NSError {
         printToConsole("\(Constants.Messages.errorMessage) : \(error.localizedFailureReason!)")
     }
@@ -75,11 +75,11 @@ func shell(launchPath: String, arguments: [String]) -> String {
     let task = Process()
     task.launchPath = launchPath
     task.arguments = arguments
-    
+
     let pipe = Pipe()
     task.standardOutput = pipe
     task.launch()
-    
+
     let data = pipe.fileHandleForReading.readDataToEndOfFile()
     let output = String(data: data, encoding: String.Encoding.utf8)!
     if output.count > 0 {
