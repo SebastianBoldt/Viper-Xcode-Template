@@ -22,7 +22,7 @@ struct Constants {
         static let successMessage = "✅  Template was installed succesfully 🎉. Enjoy it 🙂"
         static let successfullReplaceMessage = "✅  The Template has been replaced for you with the new version 🎉. Enjoy it 🙂"
         static let errorMessage = "❌  Ooops! Something went wrong 😡"
-        static let exitMessage = "Buy Buy 👋"
+        static let exitMessage = "Bye Bye 👋"
         static let promptReplace = "That Template already exists. Do you want to replace it? (YES or NO)"
     }
 
