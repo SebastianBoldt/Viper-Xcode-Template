@@ -17,7 +17,7 @@ protocol ___VARIABLE_MODULENAME___ViewProtocol: class {
 
 class ___VARIABLE_MODULENAME___ViewController: UIViewController, ___VARIABLE_MODULENAME___ViewProtocol {
     
-    private weak var presenter: ___VARIABLE_MODULENAME___PresenterProtocol?
+    private var presenter: ___VARIABLE_MODULENAME___PresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
