@@ -12,12 +12,12 @@
 import UIKit
 
 protocol ___VARIABLE_MODULENAME___ViewProtocol: class {
-    
+    func setPresenter(_ presenter: ___VARIABLE_MODULENAME___PresenterProtocol)
 }
 
 class ___VARIABLE_MODULENAME___ViewController: UIViewController, ___VARIABLE_MODULENAME___ViewProtocol {
     
-    var presenter: ___VARIABLE_MODULENAME___PresenterProtocol?
+    private weak var presenter: ___VARIABLE_MODULENAME___PresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,10 @@ class ___VARIABLE_MODULENAME___ViewController: UIViewController, ___VARIABLE_MOD
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+    }
+    
+    func setPresenter(_ presenter: ___VARIABLE_MODULENAME___PresenterProtocol) {
+        self.presenter = presenter
     }
 }
 
