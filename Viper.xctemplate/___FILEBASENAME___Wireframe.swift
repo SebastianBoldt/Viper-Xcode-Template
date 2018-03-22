@@ -12,11 +12,11 @@
 import UIKit
 
 protocol ___VARIABLE_MODULENAME___WireframeProtocol {
-    func makeViewController() -> ___VARIABLE_MODULENAME___ViewController
+    static func makeViewController() -> ___VARIABLE_MODULENAME___ViewController
 }
 
 struct ___VARIABLE_MODULENAME___Wireframe: ___VARIABLE_MODULENAME___WireframeProtocol {
-    func makeViewController() -> ___VARIABLE_MODULENAME___ViewController {
+    static func makeViewController() -> ___VARIABLE_MODULENAME___ViewController {
         
         let view = ___VARIABLE_MODULENAME___ViewController()
         let router = ___VARIABLE_MODULENAME___Router()
@@ -27,6 +27,7 @@ struct ___VARIABLE_MODULENAME___Wireframe: ___VARIABLE_MODULENAME___WireframePro
         let interactor = ___VARIABLE_MODULENAME___Interactor(dependencies: interactorDependencies)
         let presenter = ___VARIABLE_MODULENAME___Presenter(dependencies: presenterDependencies, view: view, interactor: interactor, router: router)
         interactor.setPresenter(presenter)
+        view.setPresenter(presenter)
         
         return view
     }
