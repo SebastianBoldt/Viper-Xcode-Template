@@ -15,7 +15,7 @@ protocol ___VARIABLE_MODULENAME___ViewProtocol: class {
     func setPresenter(_ presenter: ___VARIABLE_MODULENAME___PresenterProtocol)
 }
 
-final class ___VARIABLE_MODULENAME___ViewController: UIViewController, ___VARIABLE_MODULENAME___ViewProtocol {
+final class ___VARIABLE_MODULENAME___ViewController: UIViewController {
     private var presenter: ___VARIABLE_MODULENAME___PresenterProtocol?
     
     override func viewDidLoad() {
@@ -42,7 +42,9 @@ final class ___VARIABLE_MODULENAME___ViewController: UIViewController, ___VARIAB
         super.viewWillDisappear(animated)
         presenter?.viewWillDisappear(animated)
     }
-    
+}
+
+extension ___VARIABLE_MODULENAME___ViewController: ___VARIABLE_MODULENAME___ViewProtocol {
     func setPresenter(_ presenter: ___VARIABLE_MODULENAME___PresenterProtocol) {
         self.presenter = presenter
     }

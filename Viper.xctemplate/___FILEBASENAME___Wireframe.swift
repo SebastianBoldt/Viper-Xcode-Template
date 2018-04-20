@@ -17,7 +17,6 @@ protocol ___VARIABLE_MODULENAME___WireframeProtocol {
 
 struct ___VARIABLE_MODULENAME___Wireframe: ___VARIABLE_MODULENAME___WireframeProtocol {
     static func makeViewController() -> ___VARIABLE_MODULENAME___ViewController {
-        
         let view = ___VARIABLE_MODULENAME___ViewController()
         let router = ___VARIABLE_MODULENAME___Router()
 
