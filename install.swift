@@ -47,7 +47,7 @@ func moveTemplate(){
             try fileManager.copyItem(atPath: Constants.File.templateName, toPath: "\(destinationPath)/\(Constants.File.templateName)")
             printToConsole(Constants.Messages.successMessage)
 
-        } else{
+        } else {
             print(Constants.Messages.promptReplace)
             var input = ""
             repeat {
@@ -58,7 +58,7 @@ func moveTemplate(){
             } while(input != Constants.CommandLineValues.yes && input != Constants.CommandLineValues.no)
 
             if input == Constants.CommandLineValues.yes {
-                try _ = fileManager.replaceItemAt(URL(fileURLWithPath: "\(destinationPath)/\(Constants.File.templateName)"), withItemAt: URL(fileURLWithPath: Constants.File.templateName), options: [.withoutDeletingBackupItem])
+                try replaceItemAt(URL(fileURLWithPath: "\(destinationPath)/\(Constants.File.templateName)"), withItemAt: URL(fileURLWithPath: Constants.File.templateName))
                 printToConsole(Constants.Messages.successfullReplaceMessage)
             } else {
                 print(Constants.Messages.exitMessage)
@@ -69,6 +69,12 @@ func moveTemplate(){
     catch let error as NSError {
         printToConsole("\(Constants.Messages.errorMessage) : \(error.localizedFailureReason!)")
     }
+}
+
+func replaceItemAt(_ url: URL, withItemAt itemAtUrl: URL) throws {
+    let fileManager = FileManager.default
+    try fileManager.removeItem(at: url)
+    try fileManager.copyItem(atPath: itemAtUrl.path, toPath: url.path)
 }
 
 func shell(launchPath: String, arguments: [String]) -> String {
