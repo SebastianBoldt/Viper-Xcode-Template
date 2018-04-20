@@ -58,7 +58,7 @@ func moveTemplate(){
             } while(input != Constants.CommandLineValues.yes && input != Constants.CommandLineValues.no)
 
             if input == Constants.CommandLineValues.yes {
-                try _ = fileManager.replaceItemAt(URL(fileURLWithPath: "\(destinationPath)/\(Constants.File.templateName)"), withItemAt: URL(fileURLWithPath: Constants.File.templateName))
+                try _ = fileManager.replaceItemAt(URL(fileURLWithPath: "\(destinationPath)/\(Constants.File.templateName)"), withItemAt: URL(fileURLWithPath: Constants.File.templateName), options: [.withoutDeletingBackupItem])
                 printToConsole(Constants.Messages.successfullReplaceMessage)
             } else {
                 print(Constants.Messages.exitMessage)
