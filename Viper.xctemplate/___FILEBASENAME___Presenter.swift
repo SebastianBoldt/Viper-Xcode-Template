@@ -19,8 +19,7 @@ protocol ___VARIABLE_MODULENAME___PresenterProtocol: class, ___VARIABLE_MODULENA
     func viewWillDisappear(_ animated: Bool)
 }
 
-class ___VARIABLE_MODULENAME___Presenter: ___VARIABLE_MODULENAME___PresenterProtocol {
-    
+final class ___VARIABLE_MODULENAME___Presenter: ___VARIABLE_MODULENAME___PresenterProtocol {
     private weak var view: ___VARIABLE_MODULENAME___ViewProtocol?
     private let interactor: ___VARIABLE_MODULENAME___InteractorInputProtocol
     private let router: ___VARIABLE_MODULENAME___RouterProtocol

@@ -15,7 +15,7 @@ protocol ___VARIABLE_MODULENAME___ViewProtocol: class {
     func setPresenter(_ presenter: ___VARIABLE_MODULENAME___PresenterProtocol)
 }
 
-class ___VARIABLE_MODULENAME___ViewController: UIViewController, ___VARIABLE_MODULENAME___ViewProtocol {
+final class ___VARIABLE_MODULENAME___ViewController: UIViewController, ___VARIABLE_MODULENAME___ViewProtocol {
     
     private var presenter: ___VARIABLE_MODULENAME___PresenterProtocol?
     
@@ -44,4 +44,3 @@ class ___VARIABLE_MODULENAME___ViewController: UIViewController, ___VARIABLE_MOD
         self.presenter = presenter
     }
 }
-
