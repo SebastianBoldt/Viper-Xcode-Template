@@ -46,6 +46,20 @@
 			<key>Type</key>
 			<string>static</string>
 		</dict>
+		<dict>
+			<key>Description</key>
+			<string>Add file header comments</string>
+			<key>Default</key>
+			<string>false</string>
+			<key>Identifier</key>
+			<string>FileHeaderComments</string>
+			<key>Name</key>
+			<string>Add file header comments</string>
+			<key>Required</key>
+			<string>YES</string>
+			<key>Type</key>
+			<string>checkbox</string>
+		</dict>
 	</array>
 </dict>
 </plist>
