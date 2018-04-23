@@ -27,8 +27,3 @@ Sebastian Boldt, http://sebastianboldt.com
 
 This Template is available under the MIT license. See the LICENSE file for more info.
 
-## Todo
-
-* FileManager should not remove Template Files from the Template Project Directory
-* Better Code Documentation 
-
