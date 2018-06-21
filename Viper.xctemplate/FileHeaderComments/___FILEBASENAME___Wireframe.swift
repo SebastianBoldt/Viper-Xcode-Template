@@ -16,11 +16,11 @@ enum ___VARIABLE_MODULENAME___WireframeError: Error {
 }
 
 protocol ___VARIABLE_MODULENAME___WireframeProtocol {
-    static func makeViewController() -> ___VARIABLE_MODULENAME___ViewController
+    static func makeViewController() throws -> ___VARIABLE_MODULENAME___ViewController
 }
 
 struct ___VARIABLE_MODULENAME___Wireframe: ___VARIABLE_MODULENAME___WireframeProtocol {
-    static func makeViewController() -> ___VARIABLE_MODULENAME___ViewController {
+    static func makeViewController() throws -> ___VARIABLE_MODULENAME___ViewController {
         guard let viewController = UIStoryboard(name: "___VARIABLE_MODULENAME___", bundle: nil).instantiateInitialViewController() as? ___VARIABLE_MODULENAME___ViewController else {
             throw ___VARIABLE_MODULENAME___WireframeError.couldNotInstantiateInitialViewController
         }
