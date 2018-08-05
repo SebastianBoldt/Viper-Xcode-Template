@@ -9,7 +9,7 @@
 //  http://sebastianboldt.com
 //
 
-import Foundation
+import UIKit
 
 protocol ___VARIABLE_MODULENAME___RouterProtocol {
     
