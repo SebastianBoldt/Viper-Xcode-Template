@@ -10,6 +10,7 @@ I used a protocol-oriented approach so that mocking is possible for all componen
 
 Protocol based dependencies are also created for Interactor and Presenter so faking them should be easy.
 
+Works very well in conjunction with: https://github.com/crelies/Service-Xcode-Template
 ## How to use 🛠
 
 Use the install script.
