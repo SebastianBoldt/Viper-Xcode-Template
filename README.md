@@ -22,7 +22,7 @@ Use the install script.
 
 ## 🤖 Author
 
-Sebastian Boldt, http://sebastianboldt.com
+Sebastian Boldt, https://www.sebastianboldt.com
 
 ## 📄 License
 
