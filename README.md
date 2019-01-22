@@ -17,7 +17,7 @@ Use the install script.
 ```sudo swift install.swift```
 
 ## Structure
-![Viper](https://github.com/SebastianBoldt/Viper-Xcode-Template/blob/fe4b613e96cd954f5c670786587b9b5829282d92/viper.png?raw=true)
+![Viper](https://github.com/crelies/Viper-Xcode-Template/blob/master/viper.png)
 
 ## 🤖 Author
 
