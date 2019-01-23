@@ -6,9 +6,7 @@
 <a href="https://www.apple.com/de/ios/ios-11/"><img src="https://img.shields.io/badge/platform-iOS-lightgray.svg?longCache=true&style=flat-square" alt="platform" /></a>
 <a href="https://en.wikipedia.org/wiki/MIT_License"><img src="https://img.shields.io/badge/license-MIT-lightgray.svg?longCache=true&style=flat-square" alt="license" /></a>
 
-I used a protocol-oriented approach so that mocking is possible for all components.
-
-Protocol based dependencies are also created for Interactor and Presenter so faking them should be easy.
+I used a protocol-oriented approach. In addition to the VIPER components I also created protocol-based dependencies for the Interactor and the Presenter. That's why mocking is possible for all components.
 
 ## How to use 🛠
 
@@ -19,9 +17,11 @@ Use the install script.
 ## Structure
 ![Viper](https://github.com/crelies/Viper-Xcode-Template/blob/master/viper.png)
 
-## 🤖 Author
+## 🤖 Authors
 
 Sebastian Boldt, http://sebastianboldt.com
+
+Christian Elies, https://www.christianelies.de
 
 ## 📄 License
 
