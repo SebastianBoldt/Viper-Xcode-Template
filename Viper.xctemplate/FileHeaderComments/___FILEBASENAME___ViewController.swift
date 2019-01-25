@@ -29,3 +29,7 @@ extension ___VARIABLE_MODULENAME___ViewController: ___VARIABLE_MODULENAME___View
         self.presenter = presenter
     }
 }
+
+extension ___VARIABLE_MODULENAME___ViewController: ___VARIABLE_MODULENAME___Protocol {
+  
+}
