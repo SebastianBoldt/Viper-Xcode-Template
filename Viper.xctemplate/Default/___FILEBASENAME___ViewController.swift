@@ -1,6 +1,6 @@
 import UIKit
 
-protocol ___VARIABLE_MODULENAME___ViewProtocol: class {
+protocol ___VARIABLE_MODULENAME___ViewProtocol: ___VARIABLE_MODULENAME___Protocol {
     func setPresenter(_ presenter: ___VARIABLE_MODULENAME___PresenterProtocol)
 }
 
