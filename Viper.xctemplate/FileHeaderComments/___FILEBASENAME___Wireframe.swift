@@ -29,7 +29,6 @@ struct ___VARIABLE_MODULENAME___Wireframe: ___VARIABLE_MODULENAME___WireframePro
 
         let interactor = ___VARIABLE_MODULENAME___Interactor(dependencies: interactorDependencies)
         let presenter = ___VARIABLE_MODULENAME___Presenter(dependencies: presenterDependencies, view: viewController, interactor: interactor, router: router, delegate: delegate)
-        interactor.setPresenter(presenter)
         viewController.setPresenter(presenter)
         
         return viewController
