@@ -21,7 +21,8 @@ struct ___VARIABLE_MODULENAME___Wireframe: ___VARIABLE_MODULENAME___WireframePro
             throw ___VARIABLE_MODULENAME___WireframeError.couldNotInstantiate___VARIABLE_MODULENAME___ViewController
         }
 
-        let router = ___VARIABLE_MODULENAME___Router(viewController: viewController)
+        let routerDependencies = ___VARIABLE_MODULENAME___RouterDependencies()
+        let router = ___VARIABLE_MODULENAME___Router(dependencies: routerDependencies, viewController: viewController)
 
         let interactorDependencies = ___VARIABLE_MODULENAME___InteractorDependencies()
         let presenterDependencies = ___VARIABLE_MODULENAME___PresenterDependencies()
