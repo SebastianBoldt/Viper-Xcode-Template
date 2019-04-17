@@ -21,7 +21,7 @@
 	<key>SortOrder</key>
 	<integer>1</integer>
 	<key>Template Author</key>
-	<string>Sebastian Boldt @ 2018</string>
+	<string>Sebastian Boldt @ 2019</string>
 	<key>Options</key>
 	<array>
 		<dict>
@@ -32,7 +32,7 @@
 			<key>Identifier</key>
 			<string>MODULENAME</string>
 			<key>Name</key>
-			<string>Module name</string>
+			<string>Module name:</string>
 			<key>Required</key>
 			<string>YES</string>
 			<key>Type</key>
@@ -45,6 +45,46 @@
 			<string>productName</string>
 			<key>Type</key>
 			<string>static</string>
+		</dict>
+		<dict>
+			<key>Description</key>
+			<string>View class</string>
+			<key>Default</key>
+			<string>ViewController</string>
+			<key>Identifier</key>
+			<string>ViewClass</string>
+			<key>Name</key>
+			<string>View class:</string>
+			<key>Required</key>
+			<string>YES</string>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Values</key>
+			<array>
+				<string>ViewController</string>
+				<string>View</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Description</key>
+			<string>Use storyboard</string>
+			<key>Default</key>
+			<string>false</string>
+			<key>Identifier</key>
+			<string>UseStoryboard</string>
+			<key>Name</key>
+			<string>Use storyboard</string>
+			<key>Required</key>
+			<string>YES</string>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>ViewClass</key>
+				<array>
+					<string>ViewController</string>
+				</array>
+			</dict>
 		</dict>
 		<dict>
 			<key>Description</key>
