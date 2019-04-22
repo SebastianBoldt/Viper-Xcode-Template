@@ -88,6 +88,27 @@
 		</dict>
 		<dict>
 			<key>Description</key>
+			<string>Separate view from view controller</string>
+			<key>Default</key>
+			<string>false</string>
+			<key>Identifier</key>
+			<string>SeparateViewFromViewController</string>
+			<key>Name</key>
+			<string>Separate view from view controller</string>
+			<key>Required</key>
+			<string>YES</string>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>ViewClass</key>
+				<array>
+					<string>ViewController</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Description</key>
 			<string>Add file header comments</string>
 			<key>Default</key>
 			<string>false</string>
