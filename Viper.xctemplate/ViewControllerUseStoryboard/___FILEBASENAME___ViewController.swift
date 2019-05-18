@@ -9,7 +9,7 @@ final class ___VARIABLE_MODULENAME___ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.viewDidLoad()
+        presenter?.didReceiveEvent(.viewDidLoad)
     }
 }
 

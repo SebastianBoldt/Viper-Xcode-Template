@@ -1,7 +1,8 @@
 import UIKit
 
 protocol ___VARIABLE_MODULENAME___PresenterProtocol: class {
-    func viewDidInit()
+    func didReceiveEvent(_ event: ___VARIABLE_MODULENAME___Event)
+    func didTriggerAction(_ action: ___VARIABLE_MODULENAME___Action)
 }
 
 final class ___VARIABLE_MODULENAME___Presenter {
@@ -25,7 +26,16 @@ final class ___VARIABLE_MODULENAME___Presenter {
 }
 
 extension ___VARIABLE_MODULENAME___Presenter: ___VARIABLE_MODULENAME___PresenterProtocol {
-    func viewDidInit() {
-        
+    func didReceiveEvent(_ event: ___VARIABLE_MODULENAME___Event) {
+        switch event {
+            case .viewDidInit:
+                debugPrint("viewDidInit")
+        }
+    }
+
+    func didTriggerAction(_ action: ___VARIABLE_MODULENAME___Action) {
+        switch action {
+            default: ()
+        }
     }
 }
