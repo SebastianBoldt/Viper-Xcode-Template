@@ -1,7 +1,7 @@
 import UIKit
 
 protocol ___VARIABLE_MODULENAME___RouterProtocol {
-    
+    func navigate(toRoute route: ___VARIABLE_MODULENAME___Route)
 }
 
 final class ___VARIABLE_MODULENAME___Router {
@@ -16,5 +16,9 @@ final class ___VARIABLE_MODULENAME___Router {
 }
 
 extension ___VARIABLE_MODULENAME___Router: ___VARIABLE_MODULENAME___RouterProtocol {
-	
+	func navigate(toRoute route: ___VARIABLE_MODULENAME___Route) {
+        switch route {
+            default: ()
+        }
+    }
 }

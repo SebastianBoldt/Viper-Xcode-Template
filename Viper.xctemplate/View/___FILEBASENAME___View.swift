@@ -10,7 +10,7 @@ final class ___VARIABLE_MODULENAME___View: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        presenter?.viewDidInit()
+        presenter?.didReceiveEvent(.viewDidInit)
     }
 
     required init?(coder aDecoder: NSCoder) {

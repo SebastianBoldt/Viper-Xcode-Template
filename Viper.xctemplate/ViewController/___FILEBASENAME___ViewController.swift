@@ -10,7 +10,7 @@ final class ___VARIABLE_MODULENAME___ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        presenter?.viewDidLoad()
+        presenter?.didReceiveEvent(.viewDidLoad)
     }
 }
 
