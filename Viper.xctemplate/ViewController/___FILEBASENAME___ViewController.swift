@@ -18,7 +18,7 @@ final class ___VARIABLE_MODULENAME___ViewController: UIViewController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("Use init(presenter:) instead")
+        fatalError("This initializer won't work if you use a storyboard for this view controller. Solution: Use the template again and enable the `Use storyboard` checkbox.")
     }
     
     override func viewDidLoad() {
