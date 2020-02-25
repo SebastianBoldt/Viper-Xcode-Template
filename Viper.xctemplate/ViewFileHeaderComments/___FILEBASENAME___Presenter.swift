@@ -25,15 +25,17 @@ final class ___VARIABLE_MODULENAME___Presenter {
     private weak var delegate: ___VARIABLE_MODULENAME___DelegateProtocol?
     
     init(dependencies: ___VARIABLE_MODULENAME___PresenterDependenciesProtocol, 
-         view: (___VARIABLE_MODULENAME___ViewProtocol & UIView), 
          interactor: ___VARIABLE_MODULENAME___InteractorProtocol, 
          router: ___VARIABLE_MODULENAME___RouterProtocol, 
          delegate: ___VARIABLE_MODULENAME___DelegateProtocol?) {
         self.dependencies = dependencies
-        self.view = view
         self.interactor = interactor
         self.router = router
         self.delegate = delegate
+    }
+    
+    func setView(_ view: ___VARIABLE_MODULENAME___ViewProtocol & UIView) {
+        self.view = view
     }
 }
 

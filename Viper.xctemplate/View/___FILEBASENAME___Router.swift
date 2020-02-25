@@ -8,9 +8,11 @@ final class ___VARIABLE_MODULENAME___Router {
     private let dependencies: ___VARIABLE_MODULENAME___RouterDependenciesProtocol
     private weak var view: UIView?
 
-    init(dependencies: ___VARIABLE_MODULENAME___RouterDependenciesProtocol,
-    	 view: UIView?) {
+    init(dependencies: ___VARIABLE_MODULENAME___RouterDependenciesProtocol) {
         self.dependencies = dependencies
+    }
+    
+    func setView(_ view: UIView) {
         self.view = view
     }
 }
